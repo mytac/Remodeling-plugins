@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+    <title>Mobiscroll</title>
+
+    <!-- Mobiscroll CSS Includes -->
+    <link href="css/mobiscroll.animation.css" rel="stylesheet" type="text/css" />
+    <!-- <link href="css/mobiscroll.icons.css" rel="stylesheet" type="text/css" /> -->
+    <link href="css/mobiscroll.frame.css" rel="stylesheet" type="text/css" />
+    <link href="css/mobiscroll.scroller.css" rel="stylesheet" type="text/css" />
+    <link href="css/mobiscroll.scroller.ios.css" rel="stylesheet" type="text/css" />
+    <link href="css/mobiscroll.image.css" rel="stylesheet" type="text/css" />
+
+    <style type="text/css">
+    body {
+        padding: 1em;
+        margin: 0;
+        font-size: 16px;
+        font-family: arial, verdana, sans-serif;
+    }
+    
+    input,
+    select {
+        width: 100%;
+        padding: .625em;
+        margin: 0 0 .625em 0;
+        border: 1px solid #aaa;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    </style>
+</head>
+
+<body>
+    <div>
+    </div>
+
+    <label>
+    <input id="test" />
+    </label>
+
+    <!-- Mobiscroll JS Includes -->
+    <script src="js/mobiscroll.dom.js"></script>
+    <script src="js/mobiscroll.core.js"></script>
+    <script src="js/mobiscroll.scrollview.js"></script>
+    <script src="js/mobiscroll.frame.js"></script>
+    <script src="js/mobiscroll.scroller.js"></script>
+
+    <script src="js/i18n/mobiscroll.i18n.zh.js"></script>
+
+    <script>
+    (function ($) {
+            var theme=''
+            var display='center'
+            var lang='zh'
+        function yearSet(startYear,endYear){
+            var years=[]
+            for(var i=startYear;i<=endYear;i++){
+                years.push(i)
+            }
+            return years
+        }
+        function seasonSet(num){
+            var seasons=[]
+            function season(index){
+                var obj={}
+                obj.display='第'+index+'季度'
+                obj.value=this.display
+                return obj
+            }
+            for(var i=1;i<=num;i++){
+                seasons.push(season(i))
+            }
+            return seasons
+        }
+
+        function init() {
+            mobiscroll.scroller('#test', {
+                theme: theme,
+                display: display,
+                lang: lang,
+                wheels: [
+                    [{
+                        label: '年',
+                        data: yearSet(2010,2017)
+                    }, {
+                        label: '季度',
+                        data: seasonSet(4)
+                    }]
+                ]
+            });
+        }
+            init();
+       
+    })(mobiscroll.$);
+    </script>
+</body>
+
+</html>
