@@ -1,4 +1,4 @@
-### copy these code to your console
+### 1.copy these code to your console
 ```js
 timeout=prompt("Set timeout ");
 current=location.href;
@@ -13,5 +13,6 @@ fr4me+='</frameset>';
 with(document){write(fr4me);void(close())};
 }
 ```
-### your window will fresh automatically
+### 2.input second
+### 3.your window will fresh automatically
 ![example](https://github.com/mytac/Remodeling-plugins/blob/master/window-fresher/example.gif)
