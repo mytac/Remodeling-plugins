@@ -14,3 +14,4 @@ with(document){write(fr4me);void(close())};
 }
 ```
 ### your window will fresh automatically
+![example](https://github.com/mytac/Remodeling-plugins/blob/master/window-fresher/example.gif)
